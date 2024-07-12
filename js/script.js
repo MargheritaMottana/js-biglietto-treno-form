@@ -21,6 +21,7 @@ if (isNaN(kmNumber) || isNaN(ageNumber)) {
 }
 
 else {
+
     // Calcolo il prezzo base del biglietto
 
     let price = kmNumber * 0.21;
@@ -29,27 +30,11 @@ else {
     if (ageNumber < 18) {
         console.log('Minorenne sconto del 20%');
 
-        /* 
-        Sconto del 20% - 4 soluzioni:
-        prezzo discounted = (prezzo base / 100) * 20%;
-        prezzo discounted = prezzo base * (1 - 0.2);
-        prezzo discounted = prezzo base * 0.8;
-        prezzo discounted *= 0.8;
-        */
-
         price *= 0.8;
         console.log('price', price, typeof price)
     }
     else if (ageNumber > 65) {
         console.log('Over 65 sconto 40%');
-
-        /* 
-        Sconto del 40% - 4 soluzioni:
-        prezzo discounted = (prezzo base / 100) * 40%;
-        prezzo discounted = prezzo base * (1 - 0.4);
-        prezzo discounted = prezzo base * 0.6;
-        prezzo discounted *= 0.6;
-        */
 
         price *= 0.6;
         console.log('price', price, typeof price)
@@ -59,3 +44,24 @@ else {
     alert('Il prezzo del biglietto è di €' + price.toFixed(2));
 
 }
+
+// dichiato il bottone
+const myForm = document.querySelector('form')
+
+// ascolto il click sul bottone
+// alla funzione do un nome, lo riprendo per "prevenire" il comportamento di default 
+myForm.addEventListener('submit', function (event) {
+
+    // prevengo il comportamento
+    event.preventDefault();
+
+    // esegui le regole seguenti (recupera dato dall'input)
+    const kmInput = document.getElementById('km');
+    console.log('kmInput', kmInput, typeof kmInput);
+    console.log('kmInput.value', kmInput.value, typeof kmInput.value);
+
+    const ageInput = document.getElementById('age');
+    console.log('ageInput', ageInput, typeof ageInput);
+    console.log('ageInput.value', ageInput.value, typeof ageInput.value);
+
+})
