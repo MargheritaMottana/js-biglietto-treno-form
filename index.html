@@ -20,30 +20,40 @@
 
 <body>
 
-    <main>
+    <main class="container">
 
-        <form action="">
+        <h1 class="text-primary mb-4 mt-4">
+            Calcola il prezzo del tuo biglietto
+        </h1>
+
+        <form class="row">
+
             <!-- richiesta km -->
-            <div>
-                <label for="km">
+            <div class="col-6">
+                <label for="km" class="mb-2">
                     Quanti km devi percorrere?
                 </label>
-                <input type="number" name="km" id="km" placeholder="Scrivi in numeri quanti km devi fare..." min="1"
-                    required>
+                <input class="form-control" type="number" name="km" id="km"
+                    placeholder="Scrivi in numeri quanti km devi fare..." min="1" required>
             </div>
+
             <!-- richiesta età -->
-            <div>
-                <label for="age">
+            <div class="col-6">
+                <label for="age" class="mb-2">
                     Qual è la tua età?
                 </label>
-                <input type="number" name="age" id="age" placeholder="Scrivi in numeri la tua età..." min="1" max="120"
-                    required>
+                <input class="form-control" type="number" name="age" id="age"
+                    placeholder="Scrivi in numeri la tua età..." min="1" max="120" required>
             </div>
-            <button id="submit-button" type="submit">
+
+            <!-- submit -->
+            <button class="col-2 btn btn-primary m-3" id="submit-button" type="submit">
                 Invia
             </button>
+
         </form>
 
+        <!-- risposta -->
         <div>
             Il prezzo del biglietto è di €
             <span id="result"> </span>
